@@ -7,11 +7,18 @@ fn main() {
 }
 
 fn app(cx: Scope) -> Element {
-    let mut count = use_state(cx, || 0);
+    let mut user_message = use_state(cx, || "".to_string());
+    let mut bot_message = use_state(cx, || "".to_string());
 
     cx.render(rsx! {
-        h1 { "High-Five counter: {count}" }
-        button { onclick: move |_| count += 1, "Up high!" }
-        button { onclick: move |_| count -= 1, "Down low!" }
+        input {
+            oninput: move |evt| user_message.set(evt.value.clone()),
+        }
+        div {}
+        button { 
+            onclick: move |_| bot_message.set("You said: ".to_string()+user_message), 
+            "Submit" 
+        }
+        h2 {"{bot_message}"}
     })
 }
