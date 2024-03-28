@@ -6,6 +6,8 @@ fn main() {
     LaunchBuilder::new(app).launch();
 }
 
+//Look into using Rustformers-gguf and a highly quantized version of a very small LLM (like https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF ).
+
 fn app(cx: Scope) -> Element {
     let mut user_message = use_state(cx, || "".to_string());
     let mut bot_message = use_state(cx, || "".to_string());
