@@ -9,6 +9,9 @@ edition = "2021"
 dioxus = "0.4.3"
 dioxus-fullstack = "0.4.3"
 log = "0.4.21"
+llm = { git = "https://github.com/rustformers/llm" , branch = "gguf" }
+reqwest = { version = "0.12.2", features = ["blocking"] }
+rand = "0.8.5"
 
 [features]
 default = []
