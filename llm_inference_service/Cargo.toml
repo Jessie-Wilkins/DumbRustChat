@@ -1,0 +1,13 @@
+[package]
+name = "llm_inference_service"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0.4.21"
+llm = { git = "https://github.com/rustformers/llm" , branch = "gguf" }
+reqwest = { version = "0.12.2", features = ["blocking"] }
+rand = "0.8.5"
+actix-web = "4.5.1"
